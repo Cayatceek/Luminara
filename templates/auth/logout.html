@@ -1,0 +1,22 @@
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logoutModalLabel">Выход</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="auth-text">Вы уверены, что хотите выйти?</p>
+                <form method="post" action="{% url 'account_logout' %}" class="auth-form">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger w-100">Выйти</button>
+                </form>
+                <div class="auth-link text-center mt-3">
+                    <a href="#" data-bs-dismiss="modal">Вернуться</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% load static %}
+<script src="{% static 'js/auth/logout.js' %}" defer></script>

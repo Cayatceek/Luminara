@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Luminara - Progress{% endblock %}
+{% block content %}
+    <div class="container py-4">
+        <h2 class="mb-4 fade-in">Your Progress</h2>
+
+        <!-- Кнопка "Назад" -->
+        <div class="mb-3">
+            <a href="/" class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-arrow-left"></i> Back to Home
+            </a>
+        </div>
+
+        <!-- График -->
+        <div class="card shadow-sm mb-4 fade-in">
+            <div class="card-body">
+                <h4 class="card-title">Accuracy Over Time</h4>
+                <canvas id="progress-chart" height="100"></canvas>
+            </div>
+        </div>
+
+        <!-- Таблица прогресса -->
+        <div class="card shadow-sm fade-in">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Progress Details</h4>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="sortable" data-sort="lesson">Lesson <i class="bi bi-sort-down"></i></th>
+                            <th scope="col" class="sortable" data-sort="subject">Subject <i class="bi bi-sort-down"></i></th>
+                            <th scope="col" class="sortable" data-sort="accuracy">Accuracy <i class="bi bi-sort-down"></i></th>
+                            <th scope="col" class="sortable" data-sort="time_spent">Time Spent <i class="bi bi-sort-down"></i></th>
+                            <th scope="col" class="sortable" data-sort="completed_at">Completed At <i class="bi bi-sort-down"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody id="progress-table"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

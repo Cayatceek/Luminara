@@ -1,0 +1,57 @@
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="signupModalLabel">Зарегистрироваться</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="{% url 'account_signup' %}" class="auth-form">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="{{ form.username.id_for_label }}" class="form-label">Имя пользователя</label>
+                        <input type="text" class="form-control" id="{{ form.username.id_for_label }}" name="{{ form.username.html_name }}"
+                               placeholder="Введите имя пользователя" value="{{ form.username.value|default_if_none:'' }}" required>
+                        {{ form.username.errors }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ form.email.id_for_label }}" class="form-label">Электронный адрес</label>
+                        <input type="email" class="form-control" id="{{ form.email.id_for_label }}" name="{{ form.email.html_name }}"
+                               placeholder="name@email.com" value="{{ form.email.value|default_if_none:'' }}" required>
+                        {{ form.email.errors }}
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <label for="{{ form.password1.id_for_label }}" class="form-label">Пароль</label>
+                        <input type="password" class="form-control" id="{{ form.password1.id_for_label }}" name="{{ form.password1.html_name }}"
+                               placeholder="Создать пароль" minlength="8" maxlength="72" required>
+                        <span class="password-toggle position-absolute end-0 top-50 translate-middle-y me-3" onclick="togglePassword('{{ form.password1.id_for_label }}')">
+                            <i class="bi bi-eye"></i>
+                        </span>
+                        {{ form.password1.errors }}
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <label for="{{ form.password2.id_for_label }}" class="form-label">Подтверждение пароля</label>
+                        <input type="password" class="form-control" id="{{ form.password2.id_for_label }}" name="{{ form.password2.html_name }}"
+                               placeholder="Подтвердите пароль" minlength="8" maxlength="72" required>
+                        <span class="password-toggle position-absolute end-0 top-50 translate-middle-y me-3" onclick="togglePassword('{{ form.password2.id_for_label }}')">
+                            <i class="bi bi-eye"></i>
+                        </span>
+                        {{ form.password2.errors }}
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Присоединиться бесплатно</button>
+                </form>
+                <div class="auth-social-login mt-3">
+                    <button type="button" class="btn btn-outline-secondary w-100 mb-2 social-btn google-btn"><i class="bi bi-google"></i> Продолжить с Google</button>
+                    <button type="button" class="btn btn-outline-secondary w-100 mb-2 social-btn facebook-btn"><i class="bi bi-facebook"></i> Продолжить с Facebook</button>
+                    <button type="button" class="btn btn-outline-secondary w-100 mb-2 social-btn apple-btn"><i class="bi bi-apple"></i> Продолжить через Apple</button>
+                </div>
+                <div class="auth-link text-center mt-3">
+                    Уже есть аккаунт? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" onclick="closeSignupModal()">Войти</a><br>
+                    Я принимаю <a href="#">Условия использования</a> и <a href="#">Политику конфиденциальности</a>.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% load static %}
+<script src="{% static 'js/auth/signup.js' %}" defer></script>

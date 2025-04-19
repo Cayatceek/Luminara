@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}Luminara - Home{% endblock %}
+{% block content %}
+    <!-- Геройская секция с каруселью -->
+    <div id="hero-carousel" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <div class="container text-center py-5">
+                    <h1 class="display-4">Welcome to Luminara</h1>
+                    <p class="lead">Master skills with interactive, AI-powered lessons.</p>
+                    <a href="/lessons/" class="btn btn-primary btn-lg mt-3">Start Learning</a>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <div class="container text-center py-5">
+                    <h1 class="display-4">Learn English with Ease</h1>
+                    <p class="lead">Practice grammar and vocabulary with personalized lessons.</p>
+                    <a href="/lessons/" class="btn btn-primary btn-lg mt-3">Explore Lessons</a>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <div class="container text-center py-5">
+                    <h1 class="display-4">Track Your Progress</h1>
+                    <p class="lead">Monitor your growth and level up your skills.</p>
+                    <a href="/progress/" class="btn btn-primary btn-lg mt-3">View Progress</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Секция с преимуществами -->
+    <div class="container mb-5">
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100 hover-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Flexible Learning</h3>
+                        <p class="card-text">Explore topics like English grammar or dive into programming.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100 hover-card">
+                    <div class="card-body">
+                        <h3 class="card-title">AI Feedback</h3>
+                        <p class="card-text">Instantly know how you're doing with smart answer checking.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100 hover-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Track Your Growth</h3>
+                        <p class="card-text">Monitor progress and level up across any subject.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Секция со статистикой -->
+    <div class="container mb-5">
+        <h2 class="text-center mb-4">Luminara by the Numbers</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h3 class="stat-number" data-target="50">0</h3>
+                <p>Lessons Available</p>
+            </div>
+            <div class="col-md-4">
+                <h3 class="stat-number" data-target="10">0</h3>
+                <p>Categories to Explore</p>
+            </div>
+            <div class="col-md-4">
+                <h3 class="stat-number" data-target="1000">0</h3>
+                <p>Active Learners</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
